@@ -75,7 +75,7 @@ button {
   border-radius: 30px;
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 15px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -86,7 +86,8 @@ button {
 
 .glow-button:hover {
   color: rgba(255, 255, 255, 1);
-  box-shadow: #f7af30 0px 19px 38px, #f7af30 0px 15px 12px;
+  box-shadow: #f7af30 0px 10px 38px, #f7af30 0px 10px 12px;
+  transition: ease-in-out 0.4s;
 }
 /* ------------------------------------ */
 
@@ -170,7 +171,7 @@ main {
 
 section {
   width: 90%;
-  height: 100% auto;
+  height: 100\%auto;
   max-width: 1200px;
   margin: 0 auto;
   /* background-image: url(https://img.freepik.com/free-photo/local-food-meal-composition-with-copy-space_23-2148833777.jpg?size=626&ext=jpg&ga=GA1.1.531614703.1680044060&semt=sph);
