@@ -8,7 +8,7 @@ const file = form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const input = event.target["input"].value;
-  const API_URL = `https://api.edamam.com/search?q=${input}&app_id=${APP_ID}&app_key=${APP_KEY}`;
+  const API_URL = `https://api.edamam.com/search?q=${input}&app_id=${APP_ID}&app_key=${APP_KEY}&to=60`;
 
   const allResults = document.querySelector(".all-results");
 
@@ -96,7 +96,8 @@ const file = form.addEventListener("submit", (event) => {
 
         allResults.append(searchResult);
       }
-    });
+    })
+    .catch((error) => console.log(error));
 
   form.reset();
 });

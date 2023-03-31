@@ -25,6 +25,7 @@ a:hover {
 .header-icon:hover {
   color: #f7af30;
 }
+
 /* header section to style */
 
 header {
@@ -89,14 +90,13 @@ button {
   cursor: pointer;
 }
 
-.glow-button:hover {
+.glow:hover {
   color: rgba(255, 255, 255, 1);
-  box-shadow: #f7af30 0px 10px 38px, #f7af30 0px 10px 12px;
+  box-shadow: #f15024 0px 10px 38px, #f15024 0px 10px 12px;
   transition: ease-in-out 0.4s;
-  border-style: solid;
-  border-color: white;
 }
-/* ------------------------------------ */
+
+/* -------------------------------------- */
 
 .card {
   border-radius: 20px;
@@ -112,6 +112,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+
   border-radius: 20px;
 }
 
@@ -121,7 +122,7 @@ button {
   top: 0;
   right: -100%;
   position: absolute;
-  background: #f1502465;
+  background: #f15024c1;
   opacity: 1;
   backdrop-filter: blur(5px);
   color: white;
@@ -152,7 +153,7 @@ button {
   text-transform: capitalize;
   font-size: 14px;
   font-weight: 500;
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
 }
 
 .card-info {
@@ -184,15 +185,10 @@ main {
 }
 
 section {
-  width: 90%;
+  width: 50%;
   height: 100% auto;
   max-width: 1200px;
   margin: 0 auto;
-  /* background-image: url(https://img.freepik.com/free-photo/local-food-meal-composition-with-copy-space_23-2148833777.jpg?size=626&ext=jpg&ga=GA1.1.531614703.1680044060&semt=sph);
- background-image: none;
- background-size: contain;
- background-attachment: scroll;
- background-repeat: no-repeat; */
 }
 
 .im-craving {
@@ -286,7 +282,7 @@ input {
 
 .block {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 .kcal {
@@ -300,4 +296,22 @@ input {
 
 .cal {
   color: white;
+}
+
+.random-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.random-recipe-button:hover {
+  border-style: solid;
+}
+
+.category {
+  color: white;
+}
+
+.logo {
+  text-decoration: none;
 }
