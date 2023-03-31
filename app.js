@@ -17,9 +17,11 @@ const file = form.addEventListener("submit", (event) => {
       return data.json();
     })
     .then((data) => {
-      console.log(data.count);
+      //console.log(data.count);
       const introCard = document.querySelector(".intro-card");
       allResults.innerHTML = "";
+
+      console.log(data.hits[0].recipe.totalNutrients["CA"].quantity);
 
       if (input) {
         introCard.setAttribute("hidden", "");
@@ -31,18 +33,66 @@ const file = form.addEventListener("submit", (event) => {
         let siteUrl = data.hits[i].recipe["url"];
         let calories = data.hits[i].recipe["calories"].toFixed(0);
 
+        let fats = data.hits[0].recipe.totalNutrients["FAT"].quantity.toFixed();
+        let proteins =
+          data.hits[0].recipe.totalNutrients["PROCNT"].quantity.toFixed();
+        let carbs =
+          data.hits[0].recipe.totalNutrients["CHOCDF"].quantity.toFixed();
+
+        let cholesterol =
+          data.hits[0].recipe.totalNutrients["CHOLE"].quantity.toFixed();
+        let sodium =
+          data.hits[0].recipe.totalNutrients["NA"].quantity.toFixed();
+        let calcium =
+          data.hits[0].recipe.totalNutrients["CA"].quantity.toFixed();
+        let potassium =
+          data.hits[0].recipe.totalNutrients["K"].quantity.toFixed();
+        let iron = data.hits[0].recipe.totalNutrients["FE"].quantity.toFixed();
+
         const searchResult = document.createElement("div");
-        searchResult.classList.add("search-result");
-        searchResult.innerHTML = `<div class="item">
-    <img
-      src="${imageUrl}"
-    />
-    <div class="container">
-      <h1 class="title">${title}</h1>
-      <a href="${siteUrl}" target="_blank">View Recipe</a>
-    </div>
-    <p class="item-data">Calories: ${calories}</p>
-  </div>`;
+        searchResult.classList.add("item");
+        searchResult.innerHTML = `<div class="card">
+              <img
+                src="${imageUrl}"
+                alt=""
+                class="card-img"
+              />
+              <div class="card-body">
+                <h1 class="card-title">Nutrition Facts</h1>
+                <p class="card-sub-title">
+                  <div class="block">
+                    <div class="kcal">${calories} kcal</div>
+                    <div></div>
+
+                    <div><li>PROTEIN</li></div>
+                    <div class="amount">${proteins} G</div>
+                    <div><li>CARB</li></div>
+                    <div class="amount">${carbs} G</div>
+                    <div><li>FAT</li></div>
+                    <div class="amount">${fats} G</div>
+                    <div></div>
+                    <div></div>
+                    <div><li>CHOLESTEROL</li></div>
+                    <div class="amount">${cholesterol} MG</div>
+                    <div><li>SODIUM</li></div>
+                    <div class="amount">${sodium} MG</div>
+                    <div><li>CALCIUM</li></div>
+                    <div class="amount">${calcium} MG</div>
+                    <div><li>POTASSIUM</li></div>
+                    <div class="amount">${potassium} MG</div>
+                    <div><li>IRON</li></div>
+                    <div class="amount">${iron} MG</div>
+                  </div>
+                </p>
+              </div>
+            </div>
+            <div class="container">
+              <h1 class="title">${title}</h1>
+              <p class="cal item-data">Calories: ${calories}</p>
+              <a class='url' href="${siteUrl}" target="_blank">View Recipe</a>
+              
+            </div>
+          </div>`;
 
         allResults.append(searchResult);
       }
