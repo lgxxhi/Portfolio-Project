@@ -97,7 +97,7 @@ const file = form.addEventListener("submit", (event) => {
         allResults.append(searchResult);
       }
     })
-    .catch((error) => console.log(error));
+    .catch((error) => error);
 
   form.reset();
 });

@@ -301,3 +301,11 @@ input {
 .cal {
   color: white;
 }
+
+.error {
+  text-align: center;
+  background-color: red;
+  border-radius: 10px;
+  color: white;
+  font-size: 12px;
+}
